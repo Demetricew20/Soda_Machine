@@ -1,6 +1,7 @@
 import user_interface
 from customer import Customer
 from soda_machine import SodaMachine
+from wallet import Wallet
 
 
 class Simulation:
@@ -12,7 +13,6 @@ class Simulation:
         customer = Customer()
         soda_machine = SodaMachine()
         soda_machine.fill_inventory()
-        print(soda_machine.fill_inventory())
         will_proceed = True
         while will_proceed:
             user_option = user_interface.simulation_main_menu()
