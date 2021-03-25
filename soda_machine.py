@@ -129,7 +129,7 @@ class SodaMachine:
         return None
 
     def return_inventory(self, chosen_soda):
-        """Re-adds a remove can back to inventory upon unsuccessful purchase attempt"""
+        """Re-adds a removed can back to inventory upon unsuccessful purchase attempt"""
         self.inventory.append(chosen_soda)
 
     def deposit_coins_into_register(self, coin_list):

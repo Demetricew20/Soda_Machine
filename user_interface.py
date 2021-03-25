@@ -73,10 +73,14 @@ def soda_selection(inventory):
     validated_user_selection = (False, None)
     soda_options = get_unique_can_names(inventory)
     while validated_user_selection[0] is False:
-        print("Please choose from the following options:")
-        i = 1
+        #To display name of cans in options
+        soda_options_name = []
         for can in soda_options:
-            print(f'\n\tEnter -{i}- for {can} : ${can.price}')
+            soda_options_name.append(can.name)
+        i = 1
+        print(f'Please choose from the following options: {soda_options_name}')
+        for can in soda_options:
+            print(f'\n\tEnter -{i}- for {can.name} : ${can.price}')
             i += 1
         user_selection = try_parse_int(input("Selection:"))
         validated_user_selection = validate_coin_choice(user_selection, soda_options)
@@ -106,11 +110,14 @@ def get_unique_can_names(inventory):
     unique_cans = []
     previous_names = []
     for can in inventory:
-        if can.name in previous_names:
+        if can in previous_names:
             continue
         else:
             unique_cans.append(can)
-            previous_names.append(can.name)
+            previous_names.append(can)
+    # # Use set to reduce repetitiveness of entries in list
+    # set_of_cans = set(unique_cans)
+
     return unique_cans
 
 
