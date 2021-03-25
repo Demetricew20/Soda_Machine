@@ -14,6 +14,8 @@ class Simulation:
         soda_machine = SodaMachine()
         soda_machine.fill_inventory()
         soda_machine.fill_register()
+        # wallet = Wallet()
+        # wallet.fill_wallet()
         will_proceed = True
         while will_proceed:
             user_option = user_interface.simulation_main_menu()
