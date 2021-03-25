@@ -12,8 +12,7 @@ def simulation_main_menu():
         print("\tPress -3- to terminate simulation")
         user_input = try_parse_int(input('Press number: '))
         validate_user_selection = validate_main_menu(user_input)
-        if validate_user_selection[0] is True:
-            return validate_user_selection[1]
+        return validate_user_selection[1]
 
 
 def validate_main_menu(user_input):
@@ -78,9 +77,9 @@ def soda_selection(inventory):
         for can in soda_options:
             soda_options_name.append(can.name)
         i = 1
-        print(f'Please choose from the following options: {soda_options_name}')
+        print(f'\nPlease choose from the following options: {set(soda_options_name)}')
         for can in soda_options:
-            print(f'\n\tEnter -{i}- for {can.name} : ${can.price}')
+            print(f'\tEnter -{i}- for {can.name} : ${can.price}')
             i += 1
         user_selection = try_parse_int(input("Selection:"))
         validated_user_selection = validate_coin_choice(user_selection, soda_options)
