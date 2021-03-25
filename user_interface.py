@@ -28,11 +28,11 @@ def validate_main_menu(user_input):
 
 def display_customer_wallet_info(coins_list, total_value):
     """Takes in a list of ints to display number of coins along with total value of coins."""
-    print('You have {coins_list[0]} Quarters')
-    print('You have {coins_list[1]} Dimes')
-    print('You have {coins_list[2]} Nickels')
-    print('You have {coins_list[3]} Pennies')
-    print('Your wallet\'s total value is {total_value}')
+    print(f'You have {coins_list[0]} Quarters')
+    print(f'You have {coins_list[1]} Dimes')
+    print(f'You have {coins_list[2]} Nickels')
+    print(f'You have {coins_list[3]} Pennies')
+    print(f'Your wallet\'s total value is {total_value}')
 
 
 def display_welcome():
@@ -142,7 +142,7 @@ def coin_selection():
 
 
 def validate_coin_selection(selection):
-    """Validation function that checks if 'selection' arugment is an int 1-5"""
+    """Validation function that checks if 'selection' argument is an int 1-5"""
     switcher = {
         1: (True, "Quarter"),
         2: (True, "Dime"),
@@ -155,6 +155,6 @@ def validate_coin_selection(selection):
 
 def end_message(soda_name, change_amount):
     """Closing message displaying name of soda purchased and amount of change returned"""
-    print(f'Enjoy your {soda}')
+    print(f'Enjoy your {soda_name}')
     if change_amount >= 0:
         print(f'Dispensing ${change_amount}')
