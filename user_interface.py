@@ -122,7 +122,7 @@ def display_payment_value(customer_payment):
     total_payment_value = 0
     for coin in customer_payment:
         total_payment_value += 1
-        print(f'{coin.value}')
+        print(f'{coin.value} deposited.')
     total_payment_value = round(total_payment_value, 2)
     print(f'You currently have ${total_payment_value} in hand')
 
