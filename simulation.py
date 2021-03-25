@@ -13,6 +13,7 @@ class Simulation:
         customer = Customer()
         soda_machine = SodaMachine()
         soda_machine.fill_inventory()
+        soda_machine.fill_register()
         will_proceed = True
         while will_proceed:
             user_option = user_interface.simulation_main_menu()

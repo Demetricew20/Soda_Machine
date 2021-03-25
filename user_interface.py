@@ -142,28 +142,29 @@ def coin_selection():
         print("\tEnter -D- for Dime")
         print("\tEnter -N- for Nickel")
         print("\tEnter -P- for Penny")
-        print("\tEnter -X- for when finished to deposit payment into machine")
+        print("\tEnter -5- for when finished to deposit payment into machine")
         user_input = (input('Please select coin: '))
         validated_user_selection = validate_coin_selection(user_input)
-        if validated_user_selection[0] is False:
+        if validated_user_selection[0] is True:
+            return validated_user_selection[1]
+        else:
             print("Not a valid selection try again")
-    return validated_user_selection[1]
 
 
 def validate_coin_selection(selection):
-    """Validation function that checks if 'selection' argument is an int 1-5"""
+    """Validation function that checks if 'selection' argument is a valid key"""
     switcher = {
         'Q': (True, "Quarter"),
         'D': (True, "Dime"),
         'N': (True, "Nickel"),
         'P': (True, "Penny"),
-        'X': (True, "Done")
+        '5': (True, "Done")
     }
     return switcher.get(selection, (False, None))
 
 
 def end_message(soda_name, change_amount):
     """Closing message displaying name of soda purchased and amount of change returned"""
-    print(f'Enjoy your {soda_name}')
+    print(f'Enjoy your {soda_name.name}!')
     if change_amount >= 0:
         print(f'Dispensing ${change_amount}')
