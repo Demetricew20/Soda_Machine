@@ -48,7 +48,7 @@ def display_welcome():
 
 def output_text(text):
     """User input method that will print to console any string passed in as an argument"""
-    print("text")
+    print(text)
 
 
 def clear_console():
@@ -94,7 +94,8 @@ def try_parse_int(value):
     """Attempts to parse a string into an integer, returns 0 if unable to parse. No errors."""
     try:
         return int(value)
-    except:
+    except TypeError:
+        print('Unable to parse string')
         return 0
 
 
@@ -121,6 +122,7 @@ def display_payment_value(customer_payment):
     total_payment_value = 0
     for coin in customer_payment:
         total_payment_value += 1
+        print(f'{coin.value}')
     total_payment_value = round(total_payment_value, 2)
     print(f'You currently have ${total_payment_value} in hand')
 
