@@ -100,7 +100,7 @@ def try_parse_int(value):
     """Attempts to parse a string into an integer, returns 0 if unable to parse. No errors."""
     try:
         return int(value)
-    except TypeError:
+    except ValueError:
         print('Unable to parse string')
         return 0
 
